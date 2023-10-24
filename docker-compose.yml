@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  chatgpt_bot:
+    container_name: chatgpt-bot
+    image: node:18
+    volumes:
+      - /srv/chatgpt-bot:/app
+    working_dir: /app
+    command: "yarn run init"
+    restart: unless-stopped
+    #environment: # Set the timezone of the container (Not required, only a good practice for any application)
+    #  - TZ=

@@ -1,0 +1,27 @@
+{
+  "name": "chatgpt-bot-discord-telegram-azure",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "license": "MIT",
+  "author": "jasonfoknxu <nxu@nxu.biz> (https://nxuweb.net)",
+  "repository": "github:jasonfoknxu/chatgpt-bot-discord-telegram-azure",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc -p tsconfig.json",
+    "pm2": "pm2 start ecosystem.config.js --no-daemon",
+    "pm2:update": "pm2 startOrReload ecosystem.config.js",
+    "docker": "docker compose up -d",
+    "init:pm2": "yarn install && yarn run build && yarn run pm2",
+    "init": "yarn install && yarn run build && yarn run start"
+  },
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.61.8",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.6",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "node-telegram-bot-api": "^0.63.0"
+  }
+}
