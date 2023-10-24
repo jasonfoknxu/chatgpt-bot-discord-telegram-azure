@@ -1,0 +1,8 @@
+# Config
+.env
+
+# Compiled scripts 
+/build
+
+# Dependencies directory
+/node_modules
