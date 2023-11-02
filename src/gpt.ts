@@ -27,6 +27,9 @@ const chat = async (userPrompt: string, from: string = 'bot') => {
   const result = await client.getChatCompletions(deploymentName, messages, {
     user: (config.CHAT_MODE === 3) ? 'bot' : from,
   });
+
+  messages = [];
+
   if (!result) {
     return null;
   }
